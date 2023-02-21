@@ -20,20 +20,52 @@ const thumbMeasure = (width - 48 - 32) / 3;
 const cardWidth = width - theme.SIZES.BASE * 2;
 const categories = [
   {
-    title: "Music Album",
+    title: "Día de la mujer",
     description:
-      "Rock music is a genre of popular music. It developed during and after the 1960s in the United Kingdom.",
+      "Eventos Para Restrepo Valle Dia De La Mujer",
     image:
-      "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?fit=crop&w=840&q=80",
-    price: "$125",
+      "https://totalreporter.com/wp-content/uploads/2022/02/Imagenes-del-dia-de-la-mujer-2022.jpg",
+    price: "8 De Marzo de 2023 ",
   },
   {
-    title: "Events",
+    title: "Día de la madre",
     description:
-      "Rock music is a genre of popular music. It developed during and after the 1960s in the United Kingdom.",
+      "Otro Evento Para Restrepo Valle",
     image:
-      "https://images.unsplash.com/photo-1543747579-795b9c2c3ada?fit=crop&w=840&q=80",
-    price: "$35",
+      "https://www.conmishijos.com/uploads/diamadre-p.jpg",
+    price: "10 De Mayo De 2023",
+  },
+  {
+    title: "Día de la mujer",
+    description:
+      "Eventos Para Restrepo Valle Dia De La Mujer",
+    image:
+      "https://totalreporter.com/wp-content/uploads/2022/02/Imagenes-del-dia-de-la-mujer-2022.jpg",
+    price: "8 De Marzo de 2023 ",
+  },
+  {
+    title: "Día de la madre",
+    description:
+      "Otro Evento Para Restrepo Valle",
+    image:
+      "https://www.conmishijos.com/uploads/diamadre-p.jpg",
+    price: "10 De Mayo De 2023",
+  },
+  {
+    title: "Día de la mujer",
+    description:
+      "Eventos Para Restrepo Valle Dia De La Mujer",
+    image:
+      "https://totalreporter.com/wp-content/uploads/2022/02/Imagenes-del-dia-de-la-mujer-2022.jpg",
+    price: "8 De Marzo de 2023 ",
+  },
+  {
+    title: "Día de la madre",
+    description:
+      "Otro Evento Para Restrepo Valle",
+    image:
+      "https://www.conmishijos.com/uploads/diamadre-p.jpg",
+    price: "10 De Mayo De 2023",
   },
 ];
 
@@ -79,43 +111,12 @@ class Articles extends React.Component {
     );
   };
 
-  renderCards = () => {
+renderCards = () => {
     return (
       <Block flex style={styles.group}>
         <Text bold size={16} style={styles.title}>
-          Cards
+          Eventos
         </Text>
-        <Block flex>
-          <Block style={{ paddingHorizontal: theme.SIZES.BASE }}>
-            <Card item={articles[0]} horizontal />
-            <Block flex row>
-              <Card
-                item={articles[1]}
-                style={{ marginRight: theme.SIZES.BASE }}
-              />
-              <Card item={articles[2]} />
-            </Block>
-            <Card item={articles[4]} full />
-            <Block flex card shadow style={styles.category}>
-              <ImageBackground
-                source={{ uri: Images.Products["View article"] }}
-                style={[
-                  styles.imageBlock,
-                  { width: width - theme.SIZES.BASE * 2, height: 252 },
-                ]}
-                imageStyle={{
-                  width: width - theme.SIZES.BASE * 2,
-                  height: 252,
-                }}
-              >
-                <Block style={styles.categoryTitle}>
-                  <Text size={18} bold color={theme.COLORS.WHITE}>
-                    View article
-                  </Text>
-                </Block>
-              </ImageBackground>
-            </Block>
-          </Block>
           <Block flex style={{ marginTop: theme.SIZES.BASE / 2 }}>
             <ScrollView
               horizontal={true}
@@ -136,9 +137,10 @@ class Articles extends React.Component {
             </ScrollView>
           </Block>
         </Block>
-      </Block>
+      
     );
   };
+
 
   renderAlbum = () => {
     const { navigation } = this.props;
@@ -149,24 +151,15 @@ class Articles extends React.Component {
         style={[styles.group, { paddingBottom: theme.SIZES.BASE * 5 }]}
       >
         <Text bold size={16} style={styles.title}>
-          Album
+          Nuestras Marcas
         </Text>
         <Block style={{ marginHorizontal: theme.SIZES.BASE * 2 }}>
-          <Block flex right>
-            <Text
-              size={12}
-              color={theme.COLORS.PRIMARY}
-              onPress={() => navigation.navigate("Home")}
-            >
-              View All
-            </Text>
-          </Block>
           <Block
             row
             space="between"
             style={{ marginTop: theme.SIZES.BASE, flexWrap: "wrap" }}
           >
-            {Images.Viewed.map((img, index) => (
+            {Images.ProfilePicture.map((img, index) => (
               <Block key={`viewed-${img}`} style={styles.shadow}>
                 <Image
                   resizeMode="cover"
